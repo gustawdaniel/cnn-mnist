@@ -31,7 +31,7 @@ class MLP(nn.Module):
 
     def forward(self, x):
         return self.model(x)
-#
+
 class TinyCNN(nn.Module):
     def __init__(self):
         super().__init__()
@@ -67,7 +67,6 @@ class CNN(nn.Module):
 
     def forward(self, x):
         return self.net(x)
-
 
 class StrongCNN(nn.Module):
     def __init__(self):
@@ -142,7 +141,7 @@ def run_experiment(model_class, name):
     acc, loss = test(model, test_loader)
     print(f"Test Accuracy: {acc * 100:.2f}% | Loss: {loss:.2f} | Learning time: {duration:.1f}s")
 
-# run_experiment(MLP, "MLP")
-# run_experiment(CNN, "CNN")
-# run_experiment(TinyCNN, "Tiny CNN")
-# run_experiment(StrongCNN, "Strong CNN")
+run_experiment(MLP, "MLP")
+run_experiment(TinyCNN, "Tiny CNN")
+run_experiment(CNN, "CNN")
+run_experiment(StrongCNN, "Strong CNN")
